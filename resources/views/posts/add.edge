@@ -9,12 +9,14 @@
     <div class="form-group">
       <label>Title</label>
       <input type="text" name="title" class="form-control"
-      placeholder="Title">
+      placeholder="Title" value="{{ old('title', '') }}">
+      {{ elIf('<span class="text-danger">$self</span>', getErrorFor('title'), hasErrorFor('title')) }}
     </div>
     <div class="form-group">
       <label>Body</label>
       <textarea name="body" class="form-control"
-      placeholder="Body"></textarea>
+      placeholder="Body" value="{{ old('body', '') }}"></textarea>
+      {{ elIf('<span class="text-danger">$self</span>', getErrorFor('body'), hasErrorFor('body')) }}
     </div>
     <button class="btn btn-primary" type="submit">Submit</button>
   </form>
